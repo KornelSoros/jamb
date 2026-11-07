@@ -139,6 +139,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.1"
+  roll_dice_2d:
+    dependency: "direct main"
+    description:
+      name: roll_dice_2d
+      sha256: "151c64b31dab8be55486bc154c2a5a19c96cbcdaca7d02b08940bf6c0d324ab7"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.2"
   sky_engine:
     dependency: transitive
     description: flutter
