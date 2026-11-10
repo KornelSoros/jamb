@@ -76,7 +76,7 @@ class JambTableScreen extends StatelessWidget {
                               enabled: false,
                               textAlign: TextAlign.center,
                               textAlignVertical: TextAlignVertical.center,
-                              initialValue: (j == 2 && i < 6) ? "5" : null,
+                              initialValue: (j == 2 && i == 5) ? "5" : null,
 
                               onTap: () {},
 
@@ -87,12 +87,6 @@ class JambTableScreen extends StatelessWidget {
                               keyboardType: TextInputType.number,
                               decoration: InputDecoration(
                                 filled: true,
-                                fillColor:
-                                    ((j == 1 && i < 1) ||
-                                        (j == 2 && i < 6) ||
-                                        (j == 3 && i == 5))
-                                    ? Colors.green
-                                    : Colors.white,
                                 border: InputBorder.none,
                               ),
                             ),
