@@ -11,4 +11,10 @@ class GameService:
     def get_all_games(self):
         return self.repo.get_all_games()
 
+    def get_game_by_id(self, id):
+        return self.repo.get_game_by_id(id)
+
+    def get_avaiable_fields(self, id):
+        return self.repo.get_avaiable_fields(id)
+
 

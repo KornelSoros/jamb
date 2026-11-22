@@ -17,3 +17,11 @@ def start_new_game(service: GameService = Depends(get_service)):
 @router.get("/all_games")
 def get_all_games(service: GameService = Depends(get_service)):
     return service.get_all_games()
+
+@router.get("/game/{id}")
+def get_game_by_id(id: int, service: GameService = Depends(get_service)):
+    return service.get_game_by_id(id)
+
+@router.get("/game/{id}/avaiable_fields")
+def get_avaiable_fields(id: int, service: GameService = Depends(get_service)):
+    return service.get_avaiable_fields(id)

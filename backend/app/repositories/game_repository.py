@@ -18,3 +18,10 @@ class GameRepository:
         statement = select(Game).order_by(Game.id)
         results = self.db.exec(statement).all()
         return results
+
+    def get_game_by_id(self, id):
+        statement = select(Game).where(Game.id == id)
+        return self.db.exec(statement).one()
+
+    def get_avaiable_fields(self, id):
+        pass
