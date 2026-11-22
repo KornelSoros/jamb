@@ -28,41 +28,35 @@ class _GameScreenState extends State<GameScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // print(
-    //   "EZEK A KIBASZOTT JÁTÉK ID-K: ${games.map((game) => game.id).toList()}",
-    // );
-
     return Scaffold(
       appBar: AppBar(title: Center(child: Text("Játékok"))),
       body: SafeArea(
-        child: Column(
-          children: [
-            Spacer(),
-            Expanded(
-              child: Center(
-                child: ListView.builder(
-                  itemBuilder: (context, index) {
-                    return Card(
-                      child: Column(
-                        children: [Text(games[index].id.toString())],
-                      ),
-                    );
-                  },
-                  itemCount: games.length,
-                ),
+        child: ListView.builder(
+          itemBuilder: (context, index) {
+            int gameId = games[index].id;
+            return Card(
+              child: Column(
+                children: [
+                  Text("${gameId.toString()}. játék"),
+                  ElevatedButton.icon(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return JambTableScreen(gameId: gameId);
+                          },
+                        ),
+                      );
+                    },
+                    label: Text("Megnyitás"),
+                    icon: Icon(Icons.open_in_new_outlined),
+                  ),
+                ],
               ),
-            ),
-            Spacer(),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => JambTableScreen()),
-                );
-              },
-              child: Text("Bele a játékba"),
-            ),
-          ],
+            );
+          },
+          itemCount: games.length,
         ),
       ),
     );

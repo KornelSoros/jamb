@@ -3,7 +3,9 @@ import 'package:frontend/screens/jamb_table_screen.dart';
 import 'package:roll_dice_2d/roll_dice_2d.dart';
 
 class DiceScreen extends StatefulWidget {
-  const DiceScreen({super.key});
+  final int gameId;
+
+  const DiceScreen({super.key, required this.gameId});
 
   @override
   State<DiceScreen> createState() => _DiceScreenState();
@@ -97,8 +99,10 @@ class _DiceScreenState extends State<DiceScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) =>
-                                JambTableScreen(diceValues: diceValues),
+                            builder: (context) => JambTableScreen(
+                              diceValues: diceValues,
+                              gameId: widget.gameId,
+                            ),
                           ),
                         );
                       }
